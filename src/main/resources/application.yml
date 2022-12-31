@@ -15,4 +15,8 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: update
+#      배치잡 사용시 최초 실행의 경우 false로
+  batch:
+    job:
+      enabled: false
 
