@@ -34,18 +34,6 @@ public class PostScheduleBatch {
     }
     @Scheduled(cron =  "0 0/1 * * * *")
     public void postSchedule(){
-//        스케쥴러에서 처리하는 방식
-//        //schedule걸린건만 조회
-//        String scheduled = "checked";
-//        for (Post post : repository.findByScheduled(scheduled)) {
-////            1초 차이 용인
-//            if(post.getScheduledTime().isBefore(LocalDateTime.now().plusSeconds(1))){
-//                post.setScheduled(null);
-//                repository.save(post);
-//            }
-//        }
-
-
 //        배치 job을 호출하는 방식
         Map<String, JobParameter> confMap = new HashMap<>();
         confMap.put("time", new JobParameter(System.currentTimeMillis()));
